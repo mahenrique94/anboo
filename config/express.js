@@ -1,4 +1,5 @@
-const DIRETORIO_UPLOAD = "/Arquivo/Upload/anboo/";
+const APP_NAME = "anboo";
+const DIRETORIO_UPLOAD = `/Arquivo/Upload/${APP_NAME}/`;
 const expres = require("express");
 const consign = require("consign");
 const bodyParser = require("body-parser");
@@ -14,6 +15,7 @@ module.exports = () => {
 
     const api = express();
 
+    api.set("app_name", APP_NAME);
     api.set("secret", "chaves");
     api.set("port", 3000);
     api.set("diretorio_upload", DIRETORIO_UPLOAD);
@@ -30,7 +32,7 @@ module.exports = () => {
     api.use(helmet.xssFilter());
     api.use(helmet.noSniff());
 
-    api.use("/anboo", prefix);
+    api.use(`/${APP_NAME}`, prefix);
     prefix.use("/api", router);
 
     api.disabled("x-powered-by");
