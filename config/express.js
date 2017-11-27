@@ -1,6 +1,6 @@
 const APP_NAME = "anboo";
 const DIRETORIO_UPLOAD = `/Arquivo/Upload/${APP_NAME}/`;
-const expres = require("express");
+const express = require("express");
 const consign = require("consign");
 const bodyParser = require("body-parser");
 const helmet = require("helmet");
@@ -8,8 +8,8 @@ const cors = require("cors");
 const path = require("path");
 const methodOverride = require("method-override");
 
-const prefix = expres.Router();
-const router = expres.Router();
+const prefix = express.Router();
+const router = express.Router();
 
 module.exports = () => {
 
@@ -20,7 +20,7 @@ module.exports = () => {
     api.set("port", 3000);
     api.set("diretorio_upload", DIRETORIO_UPLOAD);
 
-    api.use(expres.static(path.resolve("./app/dist")));
+    api.use(express.static(path.resolve("./app/dist")));
 
     api.use(bodyParser.urlencoded({extended : true}));
     api.use(bodyParser.json());
