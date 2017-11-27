@@ -1,0 +1,29 @@
+{
+  "name": "anboo",
+  "version": "1.0.0",
+  "description": "Realizar controle de séries, filmes e livros que estão sendou ou ofram assistidos ou lidos",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahenrique94/anboo.git"
+  },
+  "keywords": [
+    "series",
+    "filmes",
+    "livros",
+    "vue",
+    "mevn",
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "Matheus Castiglioni e Guilherme Thales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahenrique94/anboo/issues"
+  },
+  "homepage": "https://github.com/mahenrique94/anboo#readme"
+}
