@@ -25,5 +25,18 @@
   "bugs": {
     "url": "https://github.com/mahenrique94/anboo/issues"
   },
-  "homepage": "https://github.com/mahenrique94/anboo#readme"
+  "homepage": "https://github.com/mahenrique94/anboo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "consign": "^0.1.6",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "helmet": "^3.9.0",
+    "jsonwebtoken": "^8.1.0",
+    "method-override": "^2.3.10",
+    "mongo-sanitize": "^1.0.0",
+    "mongoose": "^4.13.5",
+    "path": "^0.12.7",
+    "slug": "^0.9.1"
+  }
 }
