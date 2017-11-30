@@ -1,4 +1,4 @@
-const APP_NAME = "anboo";
+const APP_NOME = "anboo";
 const DIRETORIO_UPLOAD = `/Arquivo/Upload/${APP_NAME}/`;
 const express = require("express");
 const consign = require("consign");
@@ -8,16 +8,16 @@ const cors = require("cors");
 const path = require("path");
 const methodOverride = require("method-override");
 
-const prefix = express.Router();
+const prefixo = express.Router();
 const router = express.Router();
 
 module.exports = () => {
 
     const api = express();
 
-    api.set("app_name", APP_NAME);
-    api.set("secret", "chaves");
-    api.set("port", 3000);
+    api.set("app_nome", APP_NOME);
+    api.set("segredo", "chaves");
+    api.set("porta", 3000);
     api.set("diretorio_upload", DIRETORIO_UPLOAD);
 
     api.use(express.static(path.resolve("./app/dist")));
@@ -32,12 +32,12 @@ module.exports = () => {
     api.use(helmet.xssFilter());
     api.use(helmet.noSniff());
 
-    api.use(`/${APP_NAME}`, prefix);
+    api.use(`/${APP_NOME}`, prefixo);
     prefix.use("/api", router);
 
     api.disabled("x-powered-by");
 
-    consign({cwd : "/api"}).include("models").then("controllers").then("routes/auth.js").then("routes").into(api);
+    consign({cwd : "/api"}).include("modelos").then("controllers").then("rotas").into(api);
 
     return api;
 
