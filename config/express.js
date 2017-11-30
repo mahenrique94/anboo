@@ -1,5 +1,5 @@
 const APP_NOME = "anboo";
-const DIRETORIO_UPLOAD = `/Arquivo/Upload/${APP_NAME}/`;
+const DIRETORIO_UPLOAD = `/Arquivo/Upload/${APP_NOME}/`;
 const express = require("express");
 const consign = require("consign");
 const bodyParser = require("body-parser");
@@ -33,11 +33,11 @@ module.exports = () => {
     api.use(helmet.noSniff());
 
     api.use(`/${APP_NOME}`, prefixo);
-    prefix.use("/api", router);
+    prefixo.use("/api", router);
 
     api.disabled("x-powered-by");
 
-    consign({cwd : "/api"}).include("modelos").then("controllers").then("rotas").into(api);
+    consign({cwd : "api"}).include("modelos").then("controllers").then("rotas").into(api);
 
     return api;
 

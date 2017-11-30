@@ -60,7 +60,8 @@ module.exports = () => {
                 cep : {
                     match : /[0-9]{5}-[0-9]{3}/,
                     maxlength : 9,
-                    required : true
+                    required : true,
+                    type : String
                 },
                 complemento : {
                     maxlength : 30,
@@ -94,7 +95,7 @@ module.exports = () => {
             },
             midias : [{
                 required : false,
-                type : Schema.Types.ObjectId,
+                type : mongoose.Schema.Types.ObjectId,
                 situacao : {
                     maxlength : 10,
                     required : false,
@@ -102,7 +103,7 @@ module.exports = () => {
                 },
                 episodiosassistidos : [{
                     required : false,
-                    type : Schema.Types.ObjectId
+                    type : mongoose.Schema.Types.ObjectId
                 }],
                 // Quando a midia for um Livro
                 paginaAtual : {
@@ -114,11 +115,11 @@ module.exports = () => {
             }],
             seguidores : [{
                 required : false,
-                type : Schema.Types.ObjectId
+                type : mongoose.Schema.Types.ObjectId
             }],
             seguindo : [{
                 required : false,
-                type : Schema.Types.ObjectId
+                type : mongoose.Schema.Types.ObjectId
             }],
             datacadastro : {
                 dafault : new Date(),

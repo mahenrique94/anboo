@@ -9,7 +9,7 @@ module.exports = () => {
         },
         perfil : {
             required : true,
-            type : Schema.Types.ObjectId
+            type : mongoose.Schema.Types.ObjectId
         },
         data : {
             dafault : new Date(),
