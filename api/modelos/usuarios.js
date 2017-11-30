@@ -2,9 +2,6 @@ const mongoose = require("mongoose");
 
 module.exports = () => {
 
-    const SEXOS = ["Feminino", "Masculino"];
-    const SITUACAO_MIDIA = ["Interesse", "Assistindo", "Lendo", "Assistido", "Lido"];
-
     const usuarios = mongoose.Schema({
         email : {
             index : {
@@ -36,7 +33,6 @@ module.exports = () => {
                 type : Number
             },
             sexo : {
-                enum : SEXOS,
                 maxlength : 10,
                 required : true,
                 type : String
@@ -100,12 +96,11 @@ module.exports = () => {
                 required : false,
                 type : Schema.Types.ObjectId,
                 situacao : {
-                    enum : SITUACAO_MIDIA,
                     maxlength : 10,
                     required : false,
                     type : String
                 },
-                capitulosassistidos : [{
+                episodiosassistidos : [{
                     required : false,
                     type : Schema.Types.ObjectId
                 }],
@@ -124,7 +119,17 @@ module.exports = () => {
             seguindo : [{
                 required : false,
                 type : Schema.Types.ObjectId
-            }]
+            }],
+            datacadastro : {
+                dafault : new Date(),
+                required : false,
+                type : Date
+            },
+            dataatualizacao : {
+                dafault : new Date(),
+                required : false,
+                type : Date
+            }
         }],
         datacadastro : {
             dafault : new Date(),
