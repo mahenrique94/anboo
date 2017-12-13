@@ -22,6 +22,11 @@ module.exports = () => {
             required : true,
             type : String
         },
+        imagem : {
+            maxlength: 255,
+            required : false,
+            type : String
+        },
         slug : {
             required : true,
             type : String
