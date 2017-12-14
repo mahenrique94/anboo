@@ -3,14 +3,14 @@ const slug = require("slug");
 
 module.exports = api => {
 
-    const generos = api.modelos.generos;
+    const sexos = api.modelos.sexos;
 
     return {
         atualizar : (req, res) => {
             const _id = mongoSanitize(req.body._id);
             req.body.slug = slug(req.body.descricao.toString().toLowerCase());
             req.body.dataatualizacao = new Date();
-            generos.findByIdAndUpdate(_id, req.body).exec()
+            sexos.findByIdAndUpdate(_id, req.body).exec()
                 .then(sexo => res.json(sexo))
                 .catch(erro => {
                     console.error(erro);
@@ -19,7 +19,7 @@ module.exports = api => {
         },
         deletar : (req, res) => {
             const _id = mongoSanitize(req.body._id);
-            generos.remove({_id}).exec()
+            sexos.remove({_id}).exec()
                 .then(() => res.status(204).end())
                 .catch(erro => {
                     console.error(erro);
@@ -28,7 +28,7 @@ module.exports = api => {
         },
         editar : (req, res) => {
             const _id = mongoSanitize(req.params.id);
-            generos.findOne({_id}).exec()
+            sexos.findOne({_id}).exec()
                 .then(sexo => res.json(sexo))
                 .catch(erro => {
                     console.error(erro);
@@ -36,7 +36,7 @@ module.exports = api => {
                 });
         },
         listar : (req, res) => {
-            generos.find().exec()
+            sexos.find().exec()
                 .then(lista => res.json(lista))
                 .catch(erro => {
                     console.error(erro);
@@ -46,7 +46,7 @@ module.exports = api => {
         salvar : (req, res) => {
             req.body.slug = slug(req.body.descricao.toString().toLowerCase());
             req.body.datacadastro = new Date();
-            generos.create(req.body)
+            sexos.create(req.body)
                 .then(sexo => res.status(201).json(sexo))
                 .catch(erro => {
                     console.error(erro);
