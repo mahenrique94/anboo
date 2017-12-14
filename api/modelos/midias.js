@@ -27,6 +27,12 @@ module.exports = () => {
             required : false,
             type : String
         },
+        nota : {
+            max : 10,
+            min : 0,
+            required : false,
+            type : Number
+        },
         slug : {
             required : true,
             type : String
@@ -61,6 +67,28 @@ module.exports = () => {
                 dafault : new Date(),
                 required : false,
                 type : Date
+            }
+        }],
+        comentarios : [{
+            usuario : {
+                required : false,
+                type : mongoose.Schema.Types.ObjectId
+            },
+            comentario : {
+                required : false,
+                type : String
+            }
+        }],
+        notas : [{
+            usuario : {
+                required : false,
+                type : mongoose.Schema.Types.ObjectId
+            },
+            nota : {
+                max : 10,
+                min : 0,
+                required : false,
+                type : Number
             }
         }],
         datacadastro : {
