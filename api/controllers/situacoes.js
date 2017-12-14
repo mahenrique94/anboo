@@ -3,14 +3,14 @@ const slug = require("slug");
 
 module.exports = api => {
 
-    const sexos = api.modelos.sexos;
+    const situacoes = api.modelos.situacoes;
 
     return {
         atualizar : (req, res) => {
             const _id = mongoSanitize(req.body._id);
             req.body.slug = slug(req.body.descricao.toString().toLowerCase());
             req.body.dataatualizacao = new Date();
-            sexos.findByIdAndUpdate(_id, req.body).exec()
+            situacoes.findByIdAndUpdate(_id, req.body).exec()
                 .then(situacao => res.json(situacao))
                 .catch(erro => {
                     console.error(erro);
@@ -19,7 +19,7 @@ module.exports = api => {
         },
         deletar : (req, res) => {
             const _id = mongoSanitize(req.body._id);
-            sexos.remove({_id}).exec()
+            situacoes.remove({_id}).exec()
                 .then(() => res.status(204).end())
                 .catch(erro => {
                     console.error(erro);
@@ -28,7 +28,7 @@ module.exports = api => {
         },
         editar : (req, res) => {
             const _id = mongoSanitize(req.params.id);
-            sexos.findOne({_id}).exec()
+            situacoes.findOne({_id}).exec()
                 .then(situacao => res.json(situacao))
                 .catch(erro => {
                     console.error(erro);
@@ -36,7 +36,7 @@ module.exports = api => {
                 });
         },
         listar : (req, res) => {
-            sexos.find().exec()
+            situacoes.find().exec()
                 .then(lista => res.json(lista))
                 .catch(erro => {
                     console.error(erro);
@@ -46,7 +46,7 @@ module.exports = api => {
         salvar : (req, res) => {
             req.body.slug = slug(req.body.descricao.toString().toLowerCase());
             req.body.datacadastro = new Date();
-            sexos.create(req.body)
+            situacoes.create(req.body)
                 .then(situacao => res.status(201).json(situacao))
                 .catch(erro => {
                     console.error(erro);
