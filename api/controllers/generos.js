@@ -11,7 +11,7 @@ module.exports = api => {
             req.body.slug = slug(req.body.descricao.toString().toLowerCase());
             req.body.dataatualizacao = new Date();
             generos.findByIdAndUpdate(_id, req.body).exec()
-                .then(situacao => res.json(situacao))
+                .then(tipo => res.json(tipo))
                 .catch(erro => {
                     console.error(erro);
                     res.status(500).json(erro);
@@ -29,7 +29,7 @@ module.exports = api => {
         editar : (req, res) => {
             const _id = mongoSanitize(req.params.id);
             generos.findOne({_id}).exec()
-                .then(situacao => res.json(situacao))
+                .then(tipo => res.json(tipo))
                 .catch(erro => {
                     console.error(erro);
                     res.status(404).json(erro);
@@ -47,7 +47,7 @@ module.exports = api => {
             req.body.slug = slug(req.body.descricao.toString().toLowerCase());
             req.body.datacadastro = new Date();
             generos.create(req.body)
-                .then(situacao => res.status(201).json(situacao))
+                .then(tipo => res.status(201).json(tipo))
                 .catch(erro => {
                     console.error(erro);
                     res.status(500).json(erro);

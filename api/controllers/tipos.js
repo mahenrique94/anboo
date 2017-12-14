@@ -3,14 +3,14 @@ const slug = require("slug");
 
 module.exports = api => {
 
-    const sexos = api.modelos.sexos;
+    const tipos = api.modelos.tipos;
 
     return {
         atualizar : (req, res) => {
             const _id = mongoSanitize(req.body._id);
             req.body.slug = slug(req.body.descricao.toString().toLowerCase());
             req.body.dataatualizacao = new Date();
-            sexos.findByIdAndUpdate(_id, req.body).exec()
+            tipos.findByIdAndUpdate(_id, req.body).exec()
                 .then(tipo => res.json(tipo))
                 .catch(erro => {
                     console.error(erro);
@@ -19,7 +19,7 @@ module.exports = api => {
         },
         deletar : (req, res) => {
             const _id = mongoSanitize(req.body._id);
-            sexos.remove({_id}).exec()
+            tipos.remove({_id}).exec()
                 .then(() => res.status(204).end())
                 .catch(erro => {
                     console.error(erro);
@@ -28,7 +28,7 @@ module.exports = api => {
         },
         editar : (req, res) => {
             const _id = mongoSanitize(req.params.id);
-            sexos.findOne({_id}).exec()
+            tipos.findOne({_id}).exec()
                 .then(tipo => res.json(tipo))
                 .catch(erro => {
                     console.error(erro);
@@ -36,7 +36,7 @@ module.exports = api => {
                 });
         },
         listar : (req, res) => {
-            sexos.find().exec()
+            tipos.find().exec()
                 .then(lista => res.json(lista))
                 .catch(erro => {
                     console.error(erro);
@@ -46,7 +46,7 @@ module.exports = api => {
         salvar : (req, res) => {
             req.body.slug = slug(req.body.descricao.toString().toLowerCase());
             req.body.datacadastro = new Date();
-            sexos.create(req.body)
+            tipos.create(req.body)
                 .then(tipo => res.status(201).json(tipo))
                 .catch(erro => {
                     console.error(erro);
