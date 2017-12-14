@@ -4,6 +4,9 @@ module.exports = () => {
 
     const midias = mongoose.Schema({
         nome : {
+            index : {
+                unique : true
+            },
             maxlength: 255,
             required : true,
             type : String
@@ -34,6 +37,9 @@ module.exports = () => {
             type : Number
         },
         slug : {
+            index : {
+                unique : true
+            },
             required : true,
             type : String
         },
@@ -46,6 +52,9 @@ module.exports = () => {
         },
         episodios : [{
             nome : {
+                index : {
+                    unique : true
+                },
                 maxlength: 255,
                 required : true,
                 type : String
@@ -55,6 +64,9 @@ module.exports = () => {
                 type : String
             },
             slug : {
+                index : {
+                    unique : true
+                },
                 required : true,
                 type : String
             },
@@ -81,6 +93,9 @@ module.exports = () => {
         }],
         notas : [{
             usuario : {
+                index : {
+                    unique : true
+                },
                 required : false,
                 type : mongoose.Schema.Types.ObjectId
             },

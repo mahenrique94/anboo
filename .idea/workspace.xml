@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed2b3c2d-d1f0-45cd-91d7-21b51ac773cc" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/api/controllers/tipos.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/api/rotas/tipos.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/generos.js" afterPath="$PROJECT_DIR$/api/controllers/generos.js" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/sexos.js" afterPath="$PROJECT_DIR$/api/controllers/sexos.js" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/situacoes.js" afterPath="$PROJECT_DIR$/api/controllers/situacoes.js" />
+      <change beforePath="$PROJECT_DIR$/api/modelos/generos.js" afterPath="$PROJECT_DIR$/api/modelos/generos.js" />
+      <change beforePath="$PROJECT_DIR$/api/modelos/midias.js" afterPath="$PROJECT_DIR$/api/modelos/midias.js" />
+      <change beforePath="$PROJECT_DIR$/api/modelos/sexos.js" afterPath="$PROJECT_DIR$/api/modelos/sexos.js" />
+      <change beforePath="$PROJECT_DIR$/api/modelos/situacoes.js" afterPath="$PROJECT_DIR$/api/modelos/situacoes.js" />
+      <change beforePath="$PROJECT_DIR$/api/modelos/tipos.js" afterPath="$PROJECT_DIR$/api/modelos/tipos.js" />
+      <change beforePath="$PROJECT_DIR$/api/modelos/usuarios.js" afterPath="$PROJECT_DIR$/api/modelos/usuarios.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tipos.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/rotas/tipos.js">
+      <file leaf-file-name="usuarios.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/modelos/usuarios.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="44" lean-forward="false" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+            <state relative-caret-position="235">
+              <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -55,21 +56,21 @@
         <option value="$PROJECT_DIR$/servidor.js" />
         <option value="$PROJECT_DIR$/api/modelos/sexos.css" />
         <option value="$PROJECT_DIR$/config/express.js" />
-        <option value="$PROJECT_DIR$/api/modelos/usuarios.js" />
-        <option value="$PROJECT_DIR$/api/modelos/generos.js" />
         <option value="$PROJECT_DIR$/api/rotas/generos.js" />
         <option value="$PROJECT_DIR$/api/controllers/generos.js" />
         <option value="$PROJECT_DIR$/api/modelos/atividades.js" />
-        <option value="$PROJECT_DIR$/api/modelos/midias.js" />
-        <option value="$PROJECT_DIR$/api/modelos/sexos.js" />
-        <option value="$PROJECT_DIR$/api/modelos/situacoes.js" />
-        <option value="$PROJECT_DIR$/api/modelos/tipos.js" />
         <option value="$PROJECT_DIR$/api/controllers/sexos.js" />
         <option value="$PROJECT_DIR$/api/rotas/sexos.js" />
         <option value="$PROJECT_DIR$/api/rotas/situacoes.js" />
         <option value="$PROJECT_DIR$/api/controllers/situacoes.js" />
         <option value="$PROJECT_DIR$/api/controllers/tipos.js" />
         <option value="$PROJECT_DIR$/api/rotas/tipos.js" />
+        <option value="$PROJECT_DIR$/api/modelos/generos.js" />
+        <option value="$PROJECT_DIR$/api/modelos/midias.js" />
+        <option value="$PROJECT_DIR$/api/modelos/sexos.js" />
+        <option value="$PROJECT_DIR$/api/modelos/situacoes.js" />
+        <option value="$PROJECT_DIR$/api/modelos/tipos.js" />
+        <option value="$PROJECT_DIR$/api/modelos/usuarios.js" />
       </list>
     </option>
   </component>
@@ -209,12 +210,12 @@
       <workItem from="1511778905983" duration="1593000" />
       <workItem from="1512072937205" duration="3285000" />
       <workItem from="1513179765834" duration="56000" />
-      <workItem from="1513284923659" duration="3158000" />
+      <workItem from="1513284923659" duration="3384000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8092000" />
+    <option name="totallyTimeSpent" value="8318000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
@@ -298,42 +299,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelos/midias.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="99" column="19" lean-forward="false" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/controllers/generos.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37">
           <caret line="10" column="78" lean-forward="true" selection-start-line="10" selection-start-column="78" selection-end-line="10" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelos/atividades.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelos/generos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelos/sexos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -350,30 +319,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelos/usuarios.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="140" column="19" lean-forward="false" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelos/tipos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelos/situacoes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -404,8 +349,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/rotas/tipos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="44" lean-forward="false" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modelos/generos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modelos/atividades.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modelos/midias.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="97" column="18" lean-forward="false" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modelos/sexos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modelos/situacoes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modelos/tipos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modelos/usuarios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
           <folding />
         </state>
       </provider>

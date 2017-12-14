@@ -22,6 +22,9 @@ module.exports = () => {
         },
         perfils : [{
             nome : {
+                index : {
+                    unique : true
+                },
                 maxlength : 120,
                 required : true,
                 type : String
@@ -38,6 +41,9 @@ module.exports = () => {
                 type : String
             },
             slug : {
+                index : {
+                    unique : true
+                },
                 maxlength : 255,
                 required : true,
                 type : String
