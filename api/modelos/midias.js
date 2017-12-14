@@ -59,12 +59,12 @@ module.exports = () => {
                 type : String
             },
             datacadastro : {
-                dafault : new Date(),
+                default : new Date(),
                 required : false,
                 type : Date
             },
             dataatualizacao : {
-                dafault : new Date(),
+                default : new Date(),
                 required : false,
                 type : Date
             }
@@ -92,12 +92,12 @@ module.exports = () => {
             }
         }],
         datacadastro : {
-            dafault : new Date(),
+            default : new Date(),
             required : true,
             type : Date
         },
         dataatualizacao : {
-            dafault : new Date(),
+            default : new Date(),
             required : true,
             type : Date
         }

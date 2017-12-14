@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const helmet = require("helmet");
 const cors = require("cors");
 const path = require("path");
-const methodOverride = require("method-override");
+const methodOverride = require("method-override")();
 
 const prefixo = express.Router();
 const router = express.Router();
@@ -19,6 +19,7 @@ module.exports = () => {
     api.set("segredo", "chaves");
     api.set("porta", 3000);
     api.set("diretorio_upload", DIRETORIO_UPLOAD);
+    api.set("router", router);
 
     api.use(express.static(path.resolve("./app/dist")));
 

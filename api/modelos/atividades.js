@@ -12,7 +12,7 @@ module.exports = () => {
             type : mongoose.Schema.Types.ObjectId
         },
         data : {
-            dafault : new Date(),
+            default : new Date(),
             required : true,
             type : Date
         }

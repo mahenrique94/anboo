@@ -122,23 +122,23 @@ module.exports = () => {
                 type : mongoose.Schema.Types.ObjectId
             }],
             datacadastro : {
-                dafault : new Date(),
+                default : new Date(),
                 required : false,
                 type : Date
             },
             dataatualizacao : {
-                dafault : new Date(),
+                default : new Date(),
                 required : false,
                 type : Date
             }
         }],
         datacadastro : {
-            dafault : new Date(),
+            default : new Date(),
             required : true,
             type : Date
         },
         dataatualizacao : {
-            dafault : new Date(),
+            default : new Date(),
             required : true,
             type : Date
         }

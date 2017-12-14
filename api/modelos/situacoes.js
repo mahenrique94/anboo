@@ -14,12 +14,12 @@ module.exports = () => {
             type : String
         },
         datacadastro : {
-            dafault : new Date(),
+            default : new Date(),
             required : true,
             type : Date
         },
         dataatualizacao : {
-            dafault : new Date(),
+            default : new Date(),
             required : true,
             type : Date
         }
