@@ -1,17 +1,39 @@
 const mongoSanitize = require("mongo-sanitize");
 const slug = require("slug");
+const crypto = require("crypto");
+
+const DADOS_CRIPTOGRAFAR = {
+    algoritmo : "aes256",
+    codificacao : "utf8",
+    segredo : "chaves",
+    tipo : "hex"
+};
 
 module.exports = api => {
 
-    const sexos = api.modelos.sexos;
+    const usuarios = api.modelos.usuarios;
+
+    function criptografar(senha) {
+        const cipher = crypto.createCipher(DADOS_CRIPTOGRAFAR.algoritmo, DADOS_CRIPTOGRAFAR.segredo);
+        let criptografado = cipher.update(senha, DADOS_CRIPTOGRAFAR.codificacao, DADOS_CRIPTOGRAFAR.tipo);
+        criptografado += cipher.final(DADOS_CRIPTOGRAFAR.tipo);
+        return criptografado;
+    };
+
+    function descriptografar(senha) {
+        const decipher = crypto.createDecipher(DADOS_CRIPTOGRAFAR.algoritmo, DADOS_CRIPTOGRAFAR.segredo);
+        let descriptografado = decipher.update(senha, DADOS_CRIPTOGRAFAR.tipo, DADOS_CRIPTOGRAFAR.codificacao);
+        descriptografado += decipher.final(DADOS_CRIPTOGRAFAR.codificacao);
+        return descriptografado;
+    };
 
     return {
         atualizar : (req, res) => {
             const _id = mongoSanitize(req.body._id);
-            req.body.slug = slug(req.body.descricao.toString().toLowerCase());
+            req.body.senha = criptografar(req.body.senha);
             req.body.dataatualizacao = new Date();
-            sexos.findByIdAndUpdate(_id, req.body).exec()
-                .then(sexo => res.json(sexo))
+            usuarios.findByIdAndUpdate(_id, req.body).exec()
+                .then(usuario => res.json(usuario))
                 .catch(erro => {
                     console.error(erro);
                     res.status(500).json(erro);
@@ -19,7 +41,7 @@ module.exports = api => {
         },
         deletar : (req, res) => {
             const _id = mongoSanitize(req.body._id);
-            sexos.remove({_id}).exec()
+            usuarios.remove({_id}).exec()
                 .then(() => res.status(204).end())
                 .catch(erro => {
                     console.error(erro);
@@ -28,15 +50,15 @@ module.exports = api => {
         },
         editar : (req, res) => {
             const _id = mongoSanitize(req.params.id);
-            sexos.findOne({_id}).exec()
-                .then(sexo => res.json(sexo))
+            usuarios.findOne({_id}).exec()
+                .then(usuario => res.json(usuario))
                 .catch(erro => {
                     console.error(erro);
                     res.status(404).json(erro);
                 });
         },
         listar : (req, res) => {
-            sexos.find().exec()
+            usuarios.find().exec()
                 .then(lista => res.json(lista))
                 .catch(erro => {
                     console.error(erro);
@@ -44,9 +66,8 @@ module.exports = api => {
                 });
         },
         salvar : (req, res) => {
-            req.body.slug = slug(req.body.descricao.toString().toLowerCase());
-            sexos.create(req.body)
-                .then(sexo => res.status(201).json(sexo))
+            usuarios.create(req.body)
+                .then(usuario => res.status(201).json(usuario))
                 .catch(erro => {
                     console.error(erro);
                     res.status(500).json(erro);

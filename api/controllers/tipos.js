@@ -1,4 +1,4 @@
-var mongoSanitize = require("mongo-sanitize");
+const mongoSanitize = require("mongo-sanitize");
 const slug = require("slug");
 
 module.exports = api => {
@@ -45,7 +45,6 @@ module.exports = api => {
         },
         salvar : (req, res) => {
             req.body.slug = slug(req.body.descricao.toString().toLowerCase());
-            req.body.datacadastro = new Date();
             tipos.create(req.body)
                 .then(tipo => res.status(201).json(tipo))
                 .catch(erro => {

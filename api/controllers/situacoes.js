@@ -1,4 +1,4 @@
-var mongoSanitize = require("mongo-sanitize");
+const mongoSanitize = require("mongo-sanitize");
 const slug = require("slug");
 
 module.exports = api => {
@@ -11,7 +11,7 @@ module.exports = api => {
             req.body.slug = slug(req.body.descricao.toString().toLowerCase());
             req.body.dataatualizacao = new Date();
             situacoes.findByIdAndUpdate(_id, req.body).exec()
-                .then(tipo => res.json(tipo))
+                .then(situacao => res.json(situacao))
                 .catch(erro => {
                     console.error(erro);
                     res.status(500).json(erro);
@@ -29,7 +29,7 @@ module.exports = api => {
         editar : (req, res) => {
             const _id = mongoSanitize(req.params.id);
             situacoes.findOne({_id}).exec()
-                .then(tipo => res.json(tipo))
+                .then(situacao => res.json(situacao))
                 .catch(erro => {
                     console.error(erro);
                     res.status(404).json(erro);
@@ -45,9 +45,8 @@ module.exports = api => {
         },
         salvar : (req, res) => {
             req.body.slug = slug(req.body.descricao.toString().toLowerCase());
-            req.body.datacadastro = new Date();
             situacoes.create(req.body)
-                .then(tipo => res.status(201).json(tipo))
+                .then(situacao => res.status(201).json(situacao))
                 .catch(erro => {
                     console.error(erro);
                     res.status(500).json(erro);
